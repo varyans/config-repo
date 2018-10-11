@@ -1,0 +1,29 @@
+#SQL CONNECTION
+spring:
+  datasource:
+    url:
+      "jdbc:postgresql://localhost:5432/userService?autoReconnect=true&amp;useUnicode=true&amp;createDatabaseIfNotExist=true&amp;characterEncoding=utf-8"
+    username:
+      "postgres"
+    password:
+      "postgres"
+    driver-class-name:
+      org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect:
+          org.hibernate.dialect.PostgreSQL93Dialect
+    hibernate:
+      ddl-auto:
+        update
+    show-sql: true
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+
+  #EMBEDED TOMCAT CONFIGRATION
+  #server.port = 8088
+server:
+  servlet:
+    contextPath: "/user"

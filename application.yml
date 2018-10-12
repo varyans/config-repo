@@ -19,3 +19,8 @@ logging:
       springframework:
         cloud:
           sleuth: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure: include=  *.

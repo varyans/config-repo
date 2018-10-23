@@ -1,10 +1,30 @@
+#common configuration shared between all applications
 configserver:
-    name: JHipster Registry config server
-    status: Running in Public Repo !
+    name: Docker JHipster Registry
+    status: Connected to the JHipster Registry running in Xinerji Test Server 
 
-# Default JWT secret token (to be changed in production!)
 jhipster:
     security:
         authentication:
             jwt:
-                secret: bXktc2VjcmV0LXRva2VuLXRvLWNoYW5nZS1pbi1wcm9kdWN0aW9uLWFuZC10by1rZWVwLWluLWEtc2VjdXJlLXBsYWNl
+                base64-secret: N2Q4ZWNjZjcxYTQwN2QzNjVjNTExNTEwNTZjYjRlZGFjZjI4MzA1NmY1YTU5NjA1OWZlOTgyZTllNjI2YjFmMTM2MjQ0YWQ3Y2QwYTA4OThjODdhOGJhODNmMGVhNzE5MzQ5Nw==
+    logging:
+        logstash: # forward logs to ELK
+            enabled: true
+            host: jhipster-logstash
+    metrics:
+        logs: # report metrics in the logs
+            enabled: true
+            report-frequency: 60 # in seconds
+spring:
+    zipkin:
+        base-url: http://jhipster-zipkin:9411
+        enabled: true
+    sleuth:
+        sampler:
+            probability: 1 # report 100% of traces to Zipkin
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://185.198.199.29:8761/eureka/

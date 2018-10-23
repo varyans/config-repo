@@ -19,9 +19,14 @@ logging:
       springframework:
         cloud:
           sleuth: DEBUG
+          
+configserver:
+    name: JHipster Registry config server
+    status: Running in Public Repo !
 
-management:
-  endpoints:
-    web:
-      exposure: 
-        include: "*"
+# Default JWT secret token (to be changed in production!)
+jhipster:
+    security:
+        authentication:
+            jwt:
+                secret: bXktc2VjcmV0LXRva2VuLXRvLWNoYW5nZS1pbi1wcm9kdWN0aW9uLWFuZC10by1rZWVwLWluLWEtc2VjdXJlLXBsYWNl

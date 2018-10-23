@@ -11,7 +11,7 @@ jhipster:
     logging:
         logstash: # forward logs to ELK
             enabled: true
-            host: jhipster-logstash
+            host: http://185.198.199.29:5000
     metrics:
         logs: # report metrics in the logs
             enabled: true

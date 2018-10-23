@@ -18,7 +18,7 @@ jhipster:
             report-frequency: 60 # in seconds
 spring:
     zipkin:
-        base-url: http://jhipster-zipkin:9411
+        base-url: http://185.198.199.29:9411
         enabled: true
     sleuth:
         sampler:

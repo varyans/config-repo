@@ -1,5 +1,5 @@
  zuul:
   routes:
-    users:
+    jhipster-registry:
       path: /myusers/**
       url: http://discovery.meanerror.com/
